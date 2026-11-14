@@ -1,0 +1,157 @@
+/* File Manager - drag & drop upload interface */
+
+.fm-upload {
+	width: 100%;
+}
+
+.fm-dropzone {
+	border: 2px dashed #b7c3d0;
+	border-radius: 8px;
+	background: #f7f9fc;
+	padding: 26px 16px;
+	text-align: center;
+	cursor: pointer;
+	-webkit-transition: border-color .15s ease, background-color .15s ease;
+	transition: border-color .15s ease, background-color .15s ease;
+}
+
+.fm-dropzone:hover,
+.fm-dropzone:focus {
+	border-color: #7d9dbf;
+	background: #f1f6fb;
+	outline: none;
+}
+
+.fm-dropzone--active {
+	border-color: #2f6fb3;
+	background: #e8f1fb;
+}
+
+.fm-dropzone__icon img {
+	width: 48px;
+	height: 48px;
+	opacity: .85;
+}
+
+.fm-dropzone__title {
+	font-size: 15px;
+	font-weight: bold;
+	color: #26323d;
+	margin: 8px 0 4px;
+}
+
+.fm-dropzone__hint {
+	color: #5d6b7a;
+	margin: 0 0 12px;
+}
+
+.fm-dropzone__buttons .submit_button {
+	margin: 0 3px;
+}
+
+.fm-hidden {
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+}
+
+.fm-toolbar {
+	margin: 12px 0 8px;
+	overflow: hidden;
+}
+
+.fm-toolbar .submit_button {
+	float: right;
+	margin-left: 6px;
+}
+
+.fm-toolbar__spacer {
+	display: block;
+	overflow: hidden;
+}
+
+.fm-overwrite {
+	float: left;
+	line-height: 26px;
+	color: #33414f;
+}
+
+.fm-progress {
+	display: none;
+	height: 10px;
+	background: #e3e8ee;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 6px 0;
+}
+
+.fm-progress--visible {
+	display: block;
+}
+
+.fm-progress__bar {
+	height: 100%;
+	width: 0;
+	background: #2f6fb3;
+	-webkit-transition: width .15s linear;
+	transition: width .15s linear;
+}
+
+.fm-status {
+	min-height: 18px;
+	margin: 4px 0 6px;
+	color: #33414f;
+}
+
+.fm-queue {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 4px;
+}
+
+.fm-queue th,
+.fm-queue td {
+	padding: 6px 8px;
+	border-bottom: 1px solid #e1e5ea;
+	text-align: left;
+	vertical-align: top;
+}
+
+.fm-queue th {
+	background: #f2f5f8;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.fm-queue__name {
+	word-break: break-all;
+}
+
+.fm-queue__size {
+	white-space: nowrap;
+	color: #55616e;
+}
+
+.fm-queue__row--done .fm-queue__status {
+	color: #1a7f37;
+}
+
+.fm-queue__row--error .fm-queue__status {
+	color: #b3261e;
+}
+
+.fm-queue__row--skipped .fm-queue__status {
+	color: #8a6d00;
+}
+
+.fm-queue__empty td {
+	color: #5d6b7a;
+	font-style: italic;
+	text-align: center;
+}
+
+.fm-unzip-button {
+	display: none;
+}

@@ -1,0 +1,41 @@
+{
+  "group": {
+    "name": "filemanager",
+    "title": "File Manager Settings",
+    "description": "Control the built-in File Manager admin module."
+  },
+  "settings": [
+    {
+      "name": "filemanager_enabled",
+      "title": "Enable File Manager",
+      "description": "Set to 1 to allow administrators to use the File Manager. When set to 0 the File Manager module is hidden from the Admin CP.",
+      "optionscode": "yesno",
+      "value": "1",
+      "disporder": "1"
+    },
+    {
+      "name": "filemanager_max_upload",
+      "title": "Maximum upload size (MB)",
+      "description": "Maximum size, in megabytes, allowed for a single file uploaded through the File Manager. PHP's own upload_max_filesize still applies.",
+      "optionscode": "numeric",
+      "value": "10",
+      "disporder": "2"
+    },
+    {
+      "name": "filemanager_allowed_ext",
+      "title": "Allowed upload extensions",
+      "description": "Comma separated list of extensions that may be uploaded. Empty = allow any extension that is not in the blocked list.",
+      "optionscode": "textarea",
+      "value": "",
+      "disporder": "3"
+    },
+    {
+      "name": "filemanager_blocked_ext",
+      "title": "Blocked upload extensions",
+      "description": "Comma separated list of extensions that can never be uploaded (dangerous executable types).",
+      "optionscode": "textarea",
+      "value": "php,php3,php4,php5,php7,phtml,pht,phar,cgi,pl,py,sh,asp,aspx,jsp",
+      "disporder": "4"
+    }
+  ]
+}
