@@ -35,7 +35,7 @@ To remove: **Deactivate**, then **Uninstall**. No database tables are created, s
 The repository mirrors the MyBB install paths. The main plugin file sits at the repository root; every other file keeps its real path inside the forum.
 
 ```
-filemanager.php                                  # plugin bootstrap (copy to inc/plugins/)
+inc/plugins/filemanager.php                      # plugin bootstrap
 inc/plugins/FileManager/install.php              # install / activate / deactivate / uninstall
 inc/plugins/FileManager/settings.json            # settings group + settings (PluginLibrary)
 inc/plugins/FileManager/Assets/upload.css        # ACP upload styles
@@ -59,7 +59,7 @@ admin/modules/file/quick_save.php                # inline save endpoint
 admin/modules/file/rename.php                    # rename endpoint
 ```
 
-`filemanager.php` is the only file that moves: it belongs in `inc/plugins/`. Everything under `inc/`, `admin/` and the icon set is uploaded exactly as-is.
+Every path in this repository is the real path inside a MyBB install, so the whole tree can be extracted straight into the forum root — nothing has to be moved or renamed afterwards. That includes the main plugin file at `inc/plugins/filemanager.php`.
 
 The icons in `admin/extension/` are resolved at runtime from the file extension (`admin/extension/<ext>.png`, falling back to `other.png`), so the whole folder must be present.
 
