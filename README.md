@@ -41,6 +41,16 @@ inc/plugins/FileManager/settings.json            # settings group + settings (Pl
 inc/plugins/FileManager/Assets/upload.css        # ACP upload styles
 inc/plugins/FileManager/Assets/upload.js         # ACP upload behaviour
 inc/languages/english/admin/file_manager.lang.php # ACP phrases
+admin/extension/css.png                          # file-type icons used by the file listing
+admin/extension/folder.png
+admin/extension/html.png
+admin/extension/js.png
+admin/extension/other.png
+admin/extension/php.png
+admin/extension/rar.png
+admin/extension/return.png
+admin/extension/xml.png
+admin/extension/zip.png
 admin/modules/file/config.php                    # File Manager module
 admin/modules/file/function.php                  # module helpers
 admin/modules/file/file_manager.php              # module controller
@@ -49,7 +59,11 @@ admin/modules/file/quick_save.php                # inline save endpoint
 admin/modules/file/rename.php                    # rename endpoint
 ```
 
-`filemanager.php` is the only file that moves: it belongs in `inc/plugins/`. Everything under `inc/` and `admin/` is uploaded exactly as-is.
+`filemanager.php` is the only file that moves: it belongs in `inc/plugins/`. Everything under `inc/`, `admin/` and the icon set is uploaded exactly as-is.
+
+The icons in `admin/extension/` are resolved at runtime from the file extension (`admin/extension/<ext>.png`, falling back to `other.png`), so the whole folder must be present.
+
+The ACP file editor loads CodeMirror from `jscripts/codemirror/` — that is a stock MyBB Admin CP asset shipped with your forum, **not** part of this plugin and not included here. Make sure it exists in your install, otherwise the editor pane renders without syntax highlighting.
 
 ## Settings
 
