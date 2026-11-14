@@ -19,7 +19,7 @@ MyBB ships a File Manager module (`admin/modules/file/`) that is not registered 
 | --- | --- |
 | MyBB | 1.8.x (`compatibility: 18*`) |
 | PHP | 7.4+ (works on PHP 8.x) |
-| PluginLibrary | Required — `inc/plugins/pluginlibrary.php` |
+| PluginLibrary | Bundled — `inc/plugins/pluginlibrary.php` (v13, LGPL-3.0+, © Andreas Klauer) |
 
 ## Installation
 
@@ -36,6 +36,7 @@ The repository mirrors the MyBB install paths. The main plugin file sits at the 
 
 ```
 inc/plugins/filemanager.php                      # plugin bootstrap
+inc/plugins/pluginlibrary.php                    # bundled PluginLibrary (LGPL-3.0+)
 inc/plugins/FileManager/install.php              # install / activate / deactivate / uninstall
 inc/plugins/FileManager/settings.json            # settings group + settings (PluginLibrary)
 inc/plugins/FileManager/Assets/upload.css        # ACP upload styles
@@ -76,6 +77,7 @@ The ACP file editor loads CodeMirror from `jscripts/codemirror/` — that is a s
 
 ## Notes
 
+- `inc/plugins/pluginlibrary.php` is the bundled PluginLibrary library (v13, LGPL-3.0+, © Andreas Klauer), shipped so the plugin works without a separate download. Keep its copyright header intact if you redistribute it.
 - This is an **admin-only** plugin: it has no front-end output and no templates, so it ships only the ACP language file (`inc/languages/english/admin/file_manager.lang.php`). There is no `inc/languages/english/filemanager.lang.php` because there are no front-end phrases.
 - The plugin does not modify MyBB core files. The module under `admin/modules/file/` is registered at runtime by the plugin, not patched in.
 - Keep `pluginlibrary.php` in `inc/plugins/` before activating; the activation routine returns early without it.
